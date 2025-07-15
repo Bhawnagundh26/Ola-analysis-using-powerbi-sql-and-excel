@@ -1,7 +1,6 @@
 
 # 🚖 OLA Ride Booking Analysis Dashboard (Power BI + SQL + Excel)
 
-![Dashboard Banner](./assets/banner-ola-dashboard.png)
 
 This **Power BI dashboard** delivers a comprehensive analysis of OLA ride‑booking performance in **Bengaluru**.  
 Built on **40 K+ simulated rides** from **July 2024**, it uncovers trends in bookings, revenue, cancellations, and user ratings—powered by **SQL** for data extraction, **Excel** for preparation, and **Power BI** for interactive storytelling.
@@ -42,19 +41,7 @@ The dataset captures every step of a ride, from request to completion (or cancel
 
 ---
 
-## 📸 Screenshots
 
-| Overview | Vehicle Performance |
-|----------|--------------------|
-| ![Overview](./assets/Screenshot-Overall.png) | ![Vehicle Type](./assets/Screenshot-VehicleType.png) |
-
-| Revenue Breakdown | Cancellation Reasons | Ratings |
-|-------------------|----------------------|---------|
-| ![Revenue](./assets/Screenshot-Revenue.png) | ![Cancellation](./assets/Screenshot-Cancellation.png) | ![Ratings](./assets/Screenshot-Ratings.png) |
-
-> 📝 *Place the above images in an `/assets` folder in your repo for correct rendering.*
-
----
 
 ## 🧠 Key Insights
 
