@@ -1,7 +1,80 @@
 
-# 🚖 OLA Ride Booking Analysis Dashboard (Power BI + SQL + Excel)
+# 🚖 OLA Ride Booking Analysis Dashboard (Power BI + SQL + Excel)
 
-This project presents an interactive **Power BI dashboard** to analyze and visualize **OLA ride booking data** in **Bengaluru**. With over **40,000 records** of simulated bookings from July 2024, the dashboard reveals deep insights into vehicle performance, cancellations, customer behavior, ratings, and revenue trends—powered by **SQL**, **Excel**, and **Power BI**.
+![Dashboard Banner](./assets/banner-ola-dashboard.png)
+
+This **Power BI dashboard** delivers a comprehensive analysis of OLA ride‑booking performance in **Bengaluru**.  
+Built on **40 K+ simulated rides** from **July 2024**, it uncovers trends in bookings, revenue, cancellations, and user ratings—powered by **SQL** for data extraction, **Excel** for preparation, and **Power BI** for interactive storytelling.
+
+> 📈 The dashboard highlights KPIs, patterns, and anomalies across multiple ride dimensions such as vehicle type, payment method, customer segment, and time of day.
+
+---
+
+## 📦 Dataset Attributes
+
+The dataset captures every step of a ride, from request to completion (or cancellation):
+
+- `Booking_ID` (10‑digit, prefixed “CNR”)
+- `Date`, `Time`
+- `Vehicle_Type` (Auto, Mini, Prime Sedan, Prime SUV, Bike, eBike, Prime Plus)
+- `Pickup_Location`, `Drop_Location` (50 popular Bengaluru areas)
+- `Booking_Status` (Success, Cancelled by Customer, Cancelled by Driver, Incomplete)
+- `Cancelled_Rides_by_Customer`, `Reason_for_Customer_Cancel`
+- `Cancelled_Rides_by_Driver`, `Reason_for_Driver_Cancel`
+- `Incomplete_Rides`, `Incomplete_Rides_Reason`
+- `Booking_Value` (₹)
+- `Payment_Method` (Cash, UPI, Card, Wallet)
+- `Ride_Distance` (km)
+- `V_TAT` & `C_TAT` (Avg. driver & customer arrival times)
+- `Driver_Ratings`, `Customer_Rating`
+
+---
+
+## 📊 Metrics Used in Analysis
+
+- **Ride Volume** – daily trend, weekend & match‑day spikes  
+- **Booking Status Mix** – success vs cancellations vs incomplete  
+- **Revenue & Booking Value** – by payment method & day of week  
+- **Vehicle Performance** – top vehicle types by distance & value  
+- **Cancellation Reasons** – breakdown for customers and drivers  
+- **Customer & Driver Ratings** – distribution and correlation  
+- **Top Customers** – highest spenders & ride counts  
+
+---
+
+## 📸 Screenshots
+
+| Overview | Vehicle Performance |
+|----------|--------------------|
+| ![Overview](./assets/Screenshot-Overall.png) | ![Vehicle Type](./assets/Screenshot-VehicleType.png) |
+
+| Revenue Breakdown | Cancellation Reasons | Ratings |
+|-------------------|----------------------|---------|
+| ![Revenue](./assets/Screenshot-Revenue.png) | ![Cancellation](./assets/Screenshot-Cancellation.png) | ![Ratings](./assets/Screenshot-Ratings.png) |
+
+> 📝 *Place the above images in an `/assets` folder in your repo for correct rendering.*
+
+---
+
+## 🧠 Key Insights
+
+- ✅ **62 %** of rides were successfully completed.  
+- ❌ **< 7 %** cancellations by customers—top reason: “Driver not moving toward pickup.”  
+- ❌ **< 18 %** cancellations by drivers—mostly personal/car‑related issues.  
+- 🚗 **Prime Sedan** & **Prime SUV** generated the highest revenue and average distance.  
+- 💳 **Cash** and **UPI** accounted for **70 %+** of total payments.  
+- 📅 **Weekends & match days** saw clear surges in bookings and booking value.  
+- ⭐ Average ratings remained **4.0 or higher** across all vehicle segments.
+
+---
+
+## 💻 Tools & Technologies
+
+| Tool | Purpose |
+|------|---------|
+| **SQL (MySQL)** | Data extraction, KPI calculation |
+| **Microsoft Excel** | Data generation, cleaning, preprocessing |
+| **Power BI** | Data modelling, DAX, interactive dashboards |
 
 ---
 
@@ -9,81 +82,33 @@ This project presents an interactive **Power BI dashboard** to analyze and visua
 
 | File | Description |
 |------|-------------|
-| `OLA_Ride_Booking_Data.xlsx` | Dataset with 40,000+ rows of simulated OLA ride data |
-| `PowerBI_OLA_Dashboard.pbix` | Power BI dashboard file |
-| `SQL_Scripts.sql` | SQL queries used to extract business KPIs |
-| `README.md` | Project overview and documentation |
+| `OLA_Ride_Booking_Data.xlsx` | 40 K‑row cleaned dataset |
+| `PowerBI_OLA_Dashboard.pbix` | Fully interactive dashboard |
+| `SQL_Scripts.sql` | All queries & views used in analysis |
+| `README.md` | You’re reading it 😄 |
 
 ---
 
-## 📊 Key Dashboard Features
-
-### 🎯 Filters / Slicers
-- **Date** (July 2024, Daily)
-- **Vehicle Type** (Auto, Mini, Prime Sedan, Prime SUV, etc.)
-- **Booking Status** (Success, Cancelled by Customer, Cancelled by Driver, Incomplete)
-- **Payment Method** (UPI, Cash, Card, Wallet)
-
-### 📈 Visual Insights
-- 📈 **Ride Volume Over Time**
-- 📊 **Booking Status Breakdown**
-- 🚗 **Top Vehicle Types by Distance**
-- 💳 **Revenue by Payment Method**
-- ❌ **Cancellation Reasons (Customer & Driver)**
-- ⭐ **Customer vs Driver Ratings**
-- 🧍 **Top 5 Customers by Booking Value**
-
----
-
-## 💻 Tools & Technologies Used
-
-- **SQL (MySQL)** – for data querying, joins, views, and aggregations
-- **Microsoft Excel** – for data generation, preprocessing, and formatting
-- **Power BI** – for data modeling, dashboard design, and interactive visualizations
-
----
-
-## 📸 Dashboard Snapshots
-
-### 🟢 Overview Page  
-![Overview](./assets/Screenshot-Overall.png)
-
-### 🚗 Vehicle Type Performance  
-![Vehicle Type](./assets/Screenshot-VehicleType.png)
-
-### 💳 Revenue Breakdown  
-![Revenue](./assets/Screenshot-Revenue.png)
-
-### ❌ Cancellation Reasons  
-![Cancellation](./assets/Screenshot-Cancellation.png)
-
-### ⭐ Ratings Comparison  
-![Ratings](./assets/Screenshot-Ratings.png)
-
-> 📝 *Place the above image files in a folder called `/assets` in your GitHub repo for them to render properly.*
-
----
-
-## 📌 Key Insights
-
-- ✅ **62%** of rides were successfully completed.
-- ❌ Customer cancellations (under 7%) were mostly due to *“Driver not moving toward pickup.”*
-- 🚗 **Prime Sedan** and **Prime SUV** performed best in distance and value.
-- 💳 **Cash** and **UPI** were the most preferred payment methods.
-- 📅 **Ride volume and revenue peaked** on weekends and match days.
-- ⭐ Ratings consistently averaged **4.0+** across most vehicle types.
-
----
-
-## 🧠 Sample SQL Queries
+## 🔗 Sample SQL Queries
 
 ```sql
--- 1. Retrieve all successful bookings
-SELECT * FROM bookings WHERE Booking_Status = 'Success';
+-- Retrieve all successful bookings
+SELECT *
+FROM bookings
+WHERE Booking_Status = 'Success';
 
--- 2. Average ride distance per vehicle type
-SELECT Vehicle_Type, AVG(Ride_Distance) FROM bookings GROUP BY Vehicle_Type;
+-- Average ride distance per vehicle type
+SELECT Vehicle_Type,
+       AVG(Ride_Distance) AS avg_km
+FROM bookings
+GROUP BY Vehicle_Type;
 
--- 3. Top 5 customers by ride count
-SELECT Customer_ID, COUNT(*) FROM bookings GROUP BY Customer_ID ORDER BY COUNT(*) DESC LIMIT 5;
+-- Top 5 customers by total booking value
+SELECT Customer_ID,
+       SUM(Booking_Value) AS total_spend
+FROM bookings
+GROUP BY Customer_ID
+ORDER BY total_spend DESC
+LIMIT 5;
 ```
+
