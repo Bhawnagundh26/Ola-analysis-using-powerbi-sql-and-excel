@@ -1,3 +1,4 @@
+
 # 🚖 OLA Ride Booking Analysis Dashboard (Power BI + SQL + Excel)
 
 This project presents an interactive **Power BI dashboard** to analyze and visualize **OLA ride booking data** in **Bengaluru**. With over **40,000 records** of simulated bookings from July 2024, the dashboard reveals deep insights into vehicle performance, cancellations, customer behavior, ratings, and revenue trends—powered by **SQL**, **Excel**, and **Power BI**.
@@ -45,19 +46,19 @@ This project presents an interactive **Power BI dashboard** to analyze and visua
 ## 📸 Dashboard Snapshots
 
 ### 🟢 Overview Page  
-![Overview]("C:\Users\lapi\Pictures\Screenshots\Screenshot 2025-07-15 171402.png")
+![Overview](./assets/Screenshot-Overall.png)
 
 ### 🚗 Vehicle Type Performance  
-![Vehicle Type]("C:\Users\lapi\Pictures\Screenshots\Screenshot 2025-07-15 171415.png")
+![Vehicle Type](./assets/Screenshot-VehicleType.png)
 
 ### 💳 Revenue Breakdown  
-![Revenue]("C:\Users\lapi\Pictures\Screenshots\Screenshot 2025-07-15 171429.png")
+![Revenue](./assets/Screenshot-Revenue.png)
 
 ### ❌ Cancellation Reasons  
-![Cancellation]("C:\Users\lapi\Pictures\Screenshots\Screenshot 2025-07-15 171501.png")
+![Cancellation](./assets/Screenshot-Cancellation.png)
 
 ### ⭐ Ratings Comparison  
-![Ratings]("C:\Users\lapi\Pictures\Screenshots\Screenshot 2025-07-15 171517.png")
+![Ratings](./assets/Screenshot-Ratings.png)
 
 > 📝 *Place the above image files in a folder called `/assets` in your GitHub repo for them to render properly.*
 
@@ -85,3 +86,4 @@ SELECT Vehicle_Type, AVG(Ride_Distance) FROM bookings GROUP BY Vehicle_Type;
 
 -- 3. Top 5 customers by ride count
 SELECT Customer_ID, COUNT(*) FROM bookings GROUP BY Customer_ID ORDER BY COUNT(*) DESC LIMIT 5;
+```
