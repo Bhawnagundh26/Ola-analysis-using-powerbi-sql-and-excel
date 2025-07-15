@@ -1,96 +1,87 @@
-# 🚖 OLA Ride Booking Analysis Dashboard (Excel)
+# 🚖 OLA Ride Booking Analysis Dashboard (Power BI + SQL + Excel)
 
-This project presents an interactive **Excel Dashboard** to analyze and visualize **OLA ride booking data** in **Bengaluru**. It delivers critical insights into ride patterns, vehicle performance, cancellation trends, payment preferences, and customer behavior using **Excel techniques**.
-
----
-
-## 📊 Key Dashboard Features
-
-### 🎯 Filters & Slicers
-- **Date** (Daily View for 1 Month)
-- **Vehicle Type** (Auto, Mini, Sedan, SUV, Bike)
-- **Booking Status** (Completed, Cancelled by Driver, Cancelled by Customer)
-- **Payment Method** (Cash, UPI, Wallet, Card)
-
-### 📈 Visual Insights
-- **Daily Ride Volume**: Line chart showing ride trend over time.
-- **Top Vehicle Types by Distance & Value**: Table comparing booking value and distance across vehicles.
-- **Revenue by Payment Method**: Bar chart highlighting customer payment behavior.
-- **Cancellation Reasons**: Pie charts showing customer & driver cancellation breakdowns.
-- **Driver vs Customer Ratings**: Table comparing average ratings across vehicle types.
-
----
-
-## 💻 Tools & Techniques Used
-
-- **Microsoft Excel (Advanced)**
-- Pivot Tables & Pivot Charts
-- Slicers for dynamic filtering
-- Bar, Line, and Pie Charts
-- Data Cleaning & Formatting
-
----
-
-## 📌 Insights Extracted
-
-- ✅ Around **62%** of rides were **successfully completed**.
-- ❌ **Customer cancellations** mostly occurred due to *“Driver not moving toward pickup”*.
-- 🚗 **Prime Sedan** and **Prime SUV** had the highest revenue and distance per ride.
-- 💳 **Cash** and **UPI** were the most preferred payment methods.
-- 📅 **Weekends** saw spikes in ride volume and revenue.
+This project presents an interactive **Power BI dashboard** to analyze and visualize **OLA ride booking data** in **Bengaluru**. With over **40,000 records** of simulated bookings from July 2024, the dashboard reveals deep insights into vehicle performance, cancellations, customer behavior, ratings, and revenue trends—powered by **SQL**, **Excel**, and **Power BI**.
 
 ---
 
 ## 📁 Project Files
 
-- `OLA_Ride_Booking_Analysis.xlsx` – Excel workbook containing:
-  - Cleaned dataset
-  - Pivot reports
-  - Interactive dashboard
+| File | Description |
+|------|-------------|
+| `OLA_Ride_Booking_Data.xlsx` | Dataset with 40,000+ rows of simulated OLA ride data |
+| `PowerBI_OLA_Dashboard.pbix` | Power BI dashboard file |
+| `SQL_Scripts.sql` | SQL queries used to extract business KPIs |
+| `README.md` | Project overview and documentation |
+
+---
+
+## 📊 Key Dashboard Features
+
+### 🎯 Filters / Slicers
+- **Date** (July 2024, Daily)
+- **Vehicle Type** (Auto, Mini, Prime Sedan, Prime SUV, etc.)
+- **Booking Status** (Success, Cancelled by Customer, Cancelled by Driver, Incomplete)
+- **Payment Method** (UPI, Cash, Card, Wallet)
+
+### 📈 Visual Insights
+- 📈 **Ride Volume Over Time**
+- 📊 **Booking Status Breakdown**
+- 🚗 **Top Vehicle Types by Distance**
+- 💳 **Revenue by Payment Method**
+- ❌ **Cancellation Reasons (Customer & Driver)**
+- ⭐ **Customer vs Driver Ratings**
+- 🧍 **Top 5 Customers by Booking Value**
+
+---
+
+## 💻 Tools & Technologies Used
+
+- **SQL (MySQL)** – for data querying, joins, views, and aggregations
+- **Microsoft Excel** – for data generation, preprocessing, and formatting
+- **Power BI** – for data modeling, dashboard design, and interactive visualizations
 
 ---
 
 ## 📸 Dashboard Snapshots
 
-### 🔹 Overview & Booking Trends
-![Overall](./assets/Screenshot-Overall.png)
+### 🟢 Overview Page  
+![Overview]("C:\Users\lapi\Pictures\Screenshots\Screenshot 2025-07-15 171402.png")
 
-### 🔹 Vehicle Type Performance
-![Vehicle Type](./assets/Screenshot-VehicleType.png)
+### 🚗 Vehicle Type Performance  
+![Vehicle Type]("C:\Users\lapi\Pictures\Screenshots\Screenshot 2025-07-15 171415.png")
 
-### 🔹 Revenue Analysis
-![Revenue](./assets/Screenshot-Revenue.png)
+### 💳 Revenue Breakdown  
+![Revenue]("C:\Users\lapi\Pictures\Screenshots\Screenshot 2025-07-15 171429.png")
 
-### 🔹 Cancellation Breakdown
-![Cancellation](./assets/Screenshot-Cancellation.png)
+### ❌ Cancellation Reasons  
+![Cancellation]("C:\Users\lapi\Pictures\Screenshots\Screenshot 2025-07-15 171501.png")
 
-### 🔹 Customer & Driver Ratings
-![Ratings](./assets/Screenshot-Ratings.png)
+### ⭐ Ratings Comparison  
+![Ratings]("C:\Users\lapi\Pictures\Screenshots\Screenshot 2025-07-15 171517.png")
 
----
-
-## ✅ Ideal For
-
-- Aspiring **Data Analysts** or **Excel Dashboard Designers**
-- Portfolio & Resume Projects
-- Business Intelligence Practice
-- Real-world Case Studies in Transportation Analytics
+> 📝 *Place the above image files in a folder called `/assets` in your GitHub repo for them to render properly.*
 
 ---
 
-## 🌟 What I Learned
+## 📌 Key Insights
 
-- Built a **realistic ride-booking dataset** with business logic
-- Applied **pivoting and charting techniques** for storytelling
-- Designed a **user-friendly dashboard** with interactive filters
-- Derived meaningful insights to assist business decision-making
-
----
-
-## 🚀 Future Enhancements
-
-- 🔄 Automate with **Power Query** for real-time updates
-- 🗺 Add **map-based visuals** using location data
-- 🤖 Implement **predictive analytics** for demand forecasts
+- ✅ **62%** of rides were successfully completed.
+- ❌ Customer cancellations (under 7%) were mostly due to *“Driver not moving toward pickup.”*
+- 🚗 **Prime Sedan** and **Prime SUV** performed best in distance and value.
+- 💳 **Cash** and **UPI** were the most preferred payment methods.
+- 📅 **Ride volume and revenue peaked** on weekends and match days.
+- ⭐ Ratings consistently averaged **4.0+** across most vehicle types.
 
 ---
+
+## 🧠 Sample SQL Queries
+
+```sql
+-- 1. Retrieve all successful bookings
+SELECT * FROM bookings WHERE Booking_Status = 'Success';
+
+-- 2. Average ride distance per vehicle type
+SELECT Vehicle_Type, AVG(Ride_Distance) FROM bookings GROUP BY Vehicle_Type;
+
+-- 3. Top 5 customers by ride count
+SELECT Customer_ID, COUNT(*) FROM bookings GROUP BY Customer_ID ORDER BY COUNT(*) DESC LIMIT 5;
